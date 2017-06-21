@@ -21,7 +21,7 @@ let RESULT_HTML_TEMPLATE = (
 
 //get data from API (getDataFromApi) 
 function getDataFromAPI(searchTerm, callback) {
-	let query = {
+	const query = {
 		part: "snippet",
 		key: "AIzaSyBjvgxxnXB9raTECB2uaplFTH_43isPGR8",
 		q: searchTerm, //should we use stringify for the searchTerm?
@@ -44,22 +44,21 @@ function displayYoutubeSearchData(data) {
 	
 	//iterates array items and uses each rendered result for a post or link
 	//multiple approaches towards itereating could use a for loop
-	let results = data.items.map(function(item, index) {
+	const results = data.items.map(function(item) {
 		return renderResult(item);
 	});
-	console.log(results);
 	$(".results").html(results);
 }
 
 //render results into html via template
 
 function renderResult(videoData) {
-	let template = $(RESULT_HTML_TEMPLATE);
-	let thumbnailSource = videoData.snippet.thumbnails.medium.url;
-	let videoId = 'https://www.youtube.com/watch?v=' + videoData.id.videoId;
-	let videoTitle = videoData.snippet.title;
-	let videoDesc = videoData.snippet.description;
-	let userName = videoData.snippet.channelTitle;
+	const template = $(RESULT_HTML_TEMPLATE);
+	const thumbnailSource = videoData.snippet.thumbnails.medium.url;
+	const videoId = 'https://www.youtube.com/watch?v=' + videoData.id.videoId;
+	const videoTitle = videoData.snippet.title;
+	const videoDesc = videoData.snippet.description;
+	const userName = videoData.snippet.channelTitle;
 
 
 	// <div class='youtube-video-result'>
@@ -99,8 +98,8 @@ function renderResult(videoData) {
 function watchSubmit() {
 	$(".search-form").submit(function(event) {
 		event.preventDefault();
-		let queryTarget = $(event.currentTarget).find(".query");
-		let query = queryTarget.val();
+		const queryTarget = $(event.currentTarget).find(".query");
+		const query = queryTarget.val();
 		//console.log(query);
 		//clear out input
 		queryTarget.val("");

@@ -5,10 +5,12 @@ const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 //create template variable
 let RESULT_HTML_TEMPLATE = (
 	`<div class='youtube-video-result'>
-		<a href = '' target="_blank">
-			<img src = '' class = 'youtube-thumbnail'>
-			<p class="video-title"></p>
-		</a>
+			<p class="center">
+				<a href = '' target="_blank">
+					<img src = '' class = 'youtube-thumbnail'>
+					<p class="video-title"></p>
+				</a>
+			</p>
 			<p class="user-name"></p>
 			<p class="description"></p>
 	</div>`

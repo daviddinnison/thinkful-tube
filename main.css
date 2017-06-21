@@ -1,0 +1,37 @@
+*{
+	font-family: 'Roboto', sans-serif;
+}
+
+.heading {
+	width: 70%;
+	margin: 0px auto;
+}
+
+.youtube-video-result {
+	border: solid 3px black;
+	width: 70%;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+a, p {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+.description {
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.video-title {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.video-title, .user-name {
+	display: inline-block;
+}
